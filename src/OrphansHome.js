@@ -1,9 +1,25 @@
 import React from "react";
 
+import { useNavigate,useLocation } from "react-router-dom";
+
 const OrphansHome = () => {
+  const nav = useNavigate();
+const loc=useLocation()
   return (
-    <div>
-      <header>Welcome! Glad to have you here!</header>
+    <div style={{ padding: "20px" }}>
+      <button
+        type="button"
+        style={{ float: "right" }}
+        className="btn btn-outline-primary"
+        onClick={() => nav("/")}
+      >
+        Log out
+      </button>
+      <header>
+        Welcome {loc?.search?.split('=')[1]}! Glad to have you here!
+        <br />
+        You are not alone!
+      </header>
       <div>
         <div className="container" style={{ paddingTop: 40 }}>
           <div className="row" style={{ marginBottom: 20 }}>
@@ -16,7 +32,7 @@ const OrphansHome = () => {
                     Click the button below to see the list of jobs
                   </p>
                   <p>
-                    <button type="button" className="btn btn-success">
+                    <button onClick={()=>nav('/jobs')} type="button" className="btn btn-success">
                       See jobs
                     </button>
                   </p>
@@ -34,9 +50,13 @@ const OrphansHome = () => {
                     Click the below button to see a list of houses
                   </p>
                   <p>
-                    <button type="button" className="btn btn-success">
-                      See Houses
-                    </button>
+                    <a
+                    className="btn  btn-success"
+                      href={`https://www.gazetacelesi.al/njoftime-rezultate/prona-te-patundshme/garsoniere-1-1?cm=57;58&page=1&action=ME%20QERA&pricef=%5B%200%20TO%2020000%5D&currency=leke`}
+                      target="_blank"
+                    >
+                      See houses
+                    </a>
                   </p>
                 </div>
               </div>
@@ -52,13 +72,15 @@ const OrphansHome = () => {
                     Click the button below to win a gift
                   </p>
                   <p>
-                    <button
-                      type="button"
+                    <a
+             
                       style={{ color: "white" }}
                       className="btn btn-info"
+                      target='_blank'
+                      href="https://web.facebook.com/RITKCharityClub/photos"
                     >
                       Get a gift
-                    </button>
+                    </a>
                   </p>
                 </div>
               </div>
@@ -75,14 +97,14 @@ const OrphansHome = () => {
                     Click the button below to start a chat!
                   </p>
                   <p>
-
-                  <button
+                    <a
                       type="button"
                       style={{ color: "white" }}
                       className="btn btn-primary"
+                      href='https://wa.me/+355683377337'
                     >
-                Go to chat
-                    </button>
+                      Go to chat
+                    </a>
                   </p>
                 </div>
               </div>

@@ -2,7 +2,8 @@ import React from 'react'
 
 const DashboardBusiness = () => {
 
-  const bu=JSON.parse(localStorage.getItem('businesses'))
+  const businesses=JSON.parse(localStorage.getItem('businesses'))
+
   return (
     <div>
 
@@ -41,16 +42,18 @@ const DashboardBusiness = () => {
       <td>Rruga Dituria</td>
     </tr>
 
-
-
-
-<tr>
+{businesses?.map((bu)=>{
+return <tr>
 <th scope="row">4</th>
 <td>{bu.name}</td>
 <td>{bu.nipt}</td>
 <td>{bu.email}</td>
 <td>{bu.address}</td>
 </tr>
+
+})}
+
+
 
 
   </tbody>

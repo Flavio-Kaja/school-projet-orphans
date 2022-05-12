@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Dashboard = () => {
-  const orphan=JSON.parse(localStorage.getItem('orphans'))
+  const orphans=JSON.parse(localStorage.getItem('orphans'))
 
   return (
     <div>
@@ -14,7 +14,7 @@ const Dashboard = () => {
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Surname</th>
-      <th scope="col">Phone number</th>
+      <th scope="col">Phone number/email</th>
       <th scope="col">Skills</th>
     </tr>
   </thead>
@@ -40,16 +40,21 @@ const Dashboard = () => {
       <td>0693474893</td>
       <td>Informatics, Marketing</td>
     </tr>
-    {
+    
 
-<tr>
+
+{orphans?.map(orphan=>{
+ return <tr>
 <th scope="row">4</th>
 <td>{orphan.fName}</td>
 <td>{orphan.lName}</td>
-<td>{orphan.cel}</td>
+<td>{orphan.email}</td>
 <td>{orphan.skills}</td>
 </tr>
-    }
+
+})}
+
+    
   </tbody>
 </table>
     </div>

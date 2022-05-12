@@ -1,26 +1,31 @@
 import React, { Component ,useState} from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export default function SignUp() {
- 
-
-
-
 const [fName,setA]=useState('')
 const [lName,setN]=useState('')
-const [cel,setNa]=useState('')
+const [email,setNa]=useState('')
 const [skills,setE]=useState('')
+const [password,setP]=useState('')
 
 
+const nav=useNavigate()
 const handleSubmit = (e) => {
   e.preventDefault();
 
-const obj={fName,lName, cel,skills}
+const obj={fName,lName, email,skills, password}
 
+const items = localStorage.getItem("orphans");
+if (items) {
+  const parsedItems = JSON.parse(items);
 
+  localStorage.setItem("orphans", JSON.stringify([...parsedItems,obj]));
+  nav('/sign-in')
+  return;
+}
 
-
-localStorage.setItem('orphans',JSON.stringify(obj))
+localStorage.setItem('orphans',JSON.stringify([obj]))
+nav('/sign-in')
 };
   return (
     <>
@@ -84,6 +89,7 @@ localStorage.setItem('orphans',JSON.stringify(obj))
             <div className="mb-3">
               <label>Password</label>
               <input
+              onChange={(e)=>setP(e.target.value)}
                 type="password"
                 className="form-control"
                 placeholder="Enter password"

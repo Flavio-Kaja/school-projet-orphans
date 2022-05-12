@@ -9,6 +9,7 @@ body {
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
   padding: 2rem;
+  padding-top: 0;
 }
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
@@ -60,4 +61,15 @@ body, html, .App, #root, .auth-wrapper {
 }
 .forgot-password a {
   color: #167bff;
+}
+
+
+.goback {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.goback:hover {
+
 }

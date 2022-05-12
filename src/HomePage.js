@@ -7,7 +7,7 @@ const HomePage = () => {
   const [show, setShow] = useState("orphans");
 
   return (
-    <div>
+    <div style={{paddingTop:30}}>
       <button
         style={{ float: "right" }}
         type="button"
