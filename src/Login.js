@@ -1,11 +1,10 @@
-import React, { Component, useState, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { context } from "./context";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const nav = useNavigate();
-  const user = useContext(context);
+
   const businesses = JSON.parse(localStorage.getItem("businesses"));
   const orphans = JSON.parse(localStorage.getItem("orphans"));
 
@@ -13,15 +12,13 @@ export default function Login() {
     email: "",
     password: "",
   });
-  const [showAlert, setShowAlert] = useState(false);
 
+  const [showAlert, setShowAlert] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (values.email === "admin@orphans.com" && values.password === "test123") {
       return nav("/home");
     }
-
 
     const currentBusiness = businesses?.find(
       (bis) => bis.email === values.email && bis.password === values.password
@@ -42,7 +39,7 @@ export default function Login() {
 
   return (
     <>
-      {user?.user}
+
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>

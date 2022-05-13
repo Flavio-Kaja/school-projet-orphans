@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import img from "./img.jpeg";
+import img from "./images/img.jpeg";
 import newimg from "./images/newfpg.jpg";
-import img1 from "./1.jpeg";
+
 const Homie = () => {
   return (
     <div>

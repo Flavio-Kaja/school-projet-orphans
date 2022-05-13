@@ -1,35 +1,26 @@
 import React, { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./styles/App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./Login";
-import SignUp from "./Signup";
-import SignUpBusiness from "./SignupBusiness";
-import HomePage from "./HomePage";
-import Homie from "./Homie";
-import OrphansHome from "./OrphansHome";
+import SignUp from "./components/orphan/Signup";
+import SignUpBusiness from "./components/business/SignupBusiness";
+import Homie from "./landing";
+import OrphansHome from './components/orphan/OrphansHome'
+import BusinessHome from "./components/business/BusinessHome";
+import Jobs from "./components/Jobs/Jobs";
+import {AboutUs} from "./components/common/AboutUs";
 
-import { context } from "./context";
-import BusinessHome from "./BusinessHome";
-import Jobs from "./Jobs";
-import {AboutUs} from "./AboutUs";
+
 function App() {
-  const [user, SetUser] = useState("");
-
-  const context = {
-    user,
-    SetUser,
-  };
-  const AuthContext = React.createContext(context);
-
   return (
-    <AuthContext.Provider>
+ 
       <Router>
         <div className="App">
           <div>
             <Routes>
               <Route exact path="/" element={<Homie />} />
-              <Route exact path="/home" element={<HomePage />} />
+        
               <Route exact path="/orphan/home" element={<OrphansHome />} />
               <Route exact path="/business/home" element={<BusinessHome />} />
               <Route exact path="/jobs" element={<Jobs />} />
@@ -43,7 +34,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </AuthContext.Provider>
+
   );
 }
 export default App;

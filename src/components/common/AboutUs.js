@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "./img.jpeg";
-import "./styles/general.css";
-import img1 from "./1.jpeg";
-import aboutusImg from "./images/girlWithLights.jpg";
+import img from "../../images/img.jpeg";
+import "../../styles/general.css";
+
+import aboutusImg from "../../images/girlWithLights.jpg";
 export const AboutUs = () => {
   return (
     <div>

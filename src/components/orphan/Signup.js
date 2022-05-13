@@ -1,32 +1,31 @@
-import React, { Component ,useState} from "react";
-import { Link,useNavigate } from "react-router-dom";
+import React, { Component, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
-const [fName,setA]=useState('')
-const [lName,setN]=useState('')
-const [email,setNa]=useState('')
-const [skills,setE]=useState('')
-const [password,setP]=useState('')
+  const [fName, setA] = useState("");
+  const [lName, setN] = useState("");
+  const [email, setNa] = useState("");
+  const [skills, setE] = useState("");
+  const [password, setP] = useState("");
 
+  const nav = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const nav=useNavigate()
-const handleSubmit = (e) => {
-  e.preventDefault();
+    const obj = { fName, lName, email, skills, password };
 
-const obj={fName,lName, email,skills, password}
+    const items = localStorage.getItem("orphans");
+    if (items) {
+      const parsedItems = JSON.parse(items);
 
-const items = localStorage.getItem("orphans");
-if (items) {
-  const parsedItems = JSON.parse(items);
+      localStorage.setItem("orphans", JSON.stringify([...parsedItems, obj]));
+      nav("/sign-in");
+      return;
+    }
 
-  localStorage.setItem("orphans", JSON.stringify([...parsedItems,obj]));
-  nav('/sign-in')
-  return;
-}
-
-localStorage.setItem('orphans',JSON.stringify([obj]))
-nav('/sign-in')
-};
+    localStorage.setItem("orphans", JSON.stringify([obj]));
+    nav("/sign-in");
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -62,7 +61,7 @@ nav('/sign-in')
             <div className="mb-3">
               <label>First name</label>
               <input
-              onChange={(e)=>setA(e.target.value)}
+                onChange={(e) => setA(e.target.value)}
                 type="text"
                 className="form-control"
                 placeholder="First name"
@@ -71,7 +70,7 @@ nav('/sign-in')
             <div className="mb-3">
               <label>Last name</label>
               <input
-                onChange={(e)=>setN(e.target.value)}
+                onChange={(e) => setN(e.target.value)}
                 type="text"
                 className="form-control"
                 placeholder="Last name"
@@ -80,7 +79,7 @@ nav('/sign-in')
             <div className="mb-3">
               <label>Skills</label>
               <input
-                onChange={(e)=>setE(e.target.value)}
+                onChange={(e) => setE(e.target.value)}
                 type="text"
                 className="form-control"
                 placeholder="Enter skills"
@@ -89,7 +88,7 @@ nav('/sign-in')
             <div className="mb-3">
               <label>Password</label>
               <input
-              onChange={(e)=>setP(e.target.value)}
+                onChange={(e) => setP(e.target.value)}
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
@@ -98,7 +97,7 @@ nav('/sign-in')
             <div className="mb-3">
               <label>Cel</label>
               <input
-                onChange={(e)=>setNa(e.target.value)}
+                onChange={(e) => setNa(e.target.value)}
                 type="phone"
                 className="form-control"
                 placeholder="Enter your phone number"
