@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import img from "./img.jpeg";
-
+import newimg from "./images/newfpg.jpg";
 import img1 from "./1.jpeg";
 const Homie = () => {
   return (
@@ -13,8 +13,7 @@ const Homie = () => {
             <img
               style={{
                 width: 100,
-                height:90
-              
+                height: 90,
               }}
               src={img}
             />
@@ -22,7 +21,7 @@ const Homie = () => {
           <div>
             <li>Home</li>
 
-            <li>About us</li>
+            <Link to="/about-us">About us</Link>
             <li>Contact</li>
             <li>
               <Link to="/sign-in">Login</Link>
@@ -32,13 +31,15 @@ const Homie = () => {
       </nav>
 
       <div>
-        <img style={{ width: 1000 }} src={img1} />
+        <img style={{ width: 1000 }} src={newimg} />
       </div>
 
       <div className="container" style={{ paddingTop: 100 }}>
         <div className="row">
-        
-          <div className="col-sm" style={{maxWidth:'1000px', margin:'auto'}}>
+          <div
+            className="col-sm"
+            style={{ maxWidth: "1000px", margin: "auto" }}
+          >
             <div class="jumbotron">
               <h1 class="display-4">Jetimet dhe vemendja ndaj tyre</h1>
               <p class="lead">
@@ -59,7 +60,17 @@ const Homie = () => {
                 Lorem Ipsum.
               </p>
               <p class="lead">
-              <a style={{backgroundColor:'orange', border:'none', color:'white'}} class="btn" href="https://faktoje.al/jetimet-duan-vemendje-gjithmone-jo-vec-nje-dite/" role="button" target='_blank'>
+                <a
+                  style={{
+                    backgroundColor: "orange",
+                    border: "none",
+                    color: "white",
+                  }}
+                  class="btn"
+                  href="https://faktoje.al/jetimet-duan-vemendje-gjithmone-jo-vec-nje-dite/"
+                  role="button"
+                  target="_blank"
+                >
                   Learn more
                 </a>
               </p>
@@ -69,7 +80,10 @@ const Homie = () => {
       </div>
       <div className="container" style={{ paddingTop: 100 }}>
         <div className="row">
-        <div className="col-sm" style={{maxWidth:'1000px', margin:'auto'}}>
+          <div
+            className="col-sm"
+            style={{ maxWidth: "1000px", margin: "auto" }}
+          >
             <div class="jumbotron">
               <h1 class="display-4">Shoqata e jetimeve</h1>
               <p class="lead">
@@ -90,13 +104,22 @@ const Homie = () => {
                 Lorem Ipsum.
               </p>
               <p class="lead">
-                <a style={{backgroundColor:'orange', border:'none', color:'white'}} class="btn" href="https://jetimet.org/" role="button" target='_blank' >
+                <a
+                  style={{
+                    backgroundColor: "orange",
+                    border: "none",
+                    color: "white",
+                  }}
+                  class="btn"
+                  href="https://jetimet.org/"
+                  role="button"
+                  target="_blank"
+                >
                   Learn more
                 </a>
               </p>
             </div>
           </div>
-      
         </div>
       </div>
     </div>

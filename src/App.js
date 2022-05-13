@@ -9,20 +9,18 @@ import HomePage from "./HomePage";
 import Homie from "./Homie";
 import OrphansHome from "./OrphansHome";
 
-
 import { context } from "./context";
 import BusinessHome from "./BusinessHome";
 import Jobs from "./Jobs";
-
+import {AboutUs} from "./AboutUs";
 function App() {
   const [user, SetUser] = useState("");
 
-
-  const context={
+  const context = {
     user,
-    SetUser
-  }
-   const AuthContext = React.createContext(context);
+    SetUser,
+  };
+  const AuthContext = React.createContext(context);
 
   return (
     <AuthContext.Provider>
@@ -35,7 +33,7 @@ function App() {
               <Route exact path="/orphan/home" element={<OrphansHome />} />
               <Route exact path="/business/home" element={<BusinessHome />} />
               <Route exact path="/jobs" element={<Jobs />} />
-
+              <Route exact path="/about-us" element={<AboutUs />} />
             </Routes>
           </div>
           <Routes>
