@@ -10,6 +10,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
   padding: 2rem;
   padding-top: 0;
+
 }
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
@@ -100,13 +101,10 @@ padding: 1rem;
   color:#18d4ca;
   
 }
-.card:hover{
-  transform: scale(1.05);
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
-}
+
 .card-text{
   height:80px;  
-  padding: .3rem;
+margin-left: 10px;
 }
 
 .card::before, .card::after {
@@ -130,6 +128,8 @@ padding: 1rem;
 .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
   transform: scale3d(1, 1, 1);
 }
-.card-title  {
 
+h4{
+  padding: 1rem;
+  font-size: 20px;
 }

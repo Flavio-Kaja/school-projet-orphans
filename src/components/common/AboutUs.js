@@ -3,36 +3,14 @@ import { Link } from "react-router-dom";
 import img from "../../images/img.png";
 import "../../styles/general.css";
 import aboutusImg from "../../images/girlWithLights.jpg";
+import Header from "./Header";
+
+
 export const AboutUs = () => {
   return (
-    <div>
-      <nav>
-        <ul className="list">
-          <div>
-            <img
-              style={{
-                width: 140,
-              }}
-              src={img}
-            />
-          </div>
-          <div>
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-
-            <li>
-              <Link to="/about-us">About us</Link>
-            </li>
-            <li>
-              <Link to={"/contact"}>Contact</Link>
-            </li>
-            <li>
-              <Link to="/sign-in">Login</Link>
-            </li>
-          </div>
-        </ul>
-      </nav>
+    <>
+    <Header/>
+    <div style={{maxWidth: 1000, margin:'auto'}}>
       <div className="container" style={{ paddingTop: 100 }}>
         <div className="row align-items-center">
           <div className="col">
@@ -79,5 +57,6 @@ export const AboutUs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

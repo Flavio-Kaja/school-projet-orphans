@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
-
-
+import img from "../../images/img.png";
 
 
 export default function SignUpBusiness() {
@@ -20,9 +19,6 @@ const nav=useNavigate()
     const items = localStorage.getItem("businesses");
     if (items) {
       const parsedItems = JSON.parse(items);
-
-
-
       localStorage.setItem("businesses", JSON.stringify([...parsedItems,obj]));
       nav('/sign-in')
       return;
@@ -34,10 +30,10 @@ const nav=useNavigate()
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
-            Orphanage
+  <img height={100} src={img}/>
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -67,7 +63,7 @@ const nav=useNavigate()
             <h3>Sign Up as a business</h3>
             <div className="mb-3">
               <label>Name of business</label>
-              <input
+              <input required
                 onChange={(e) => setNa(e.target.value)}
                 type="text"
                 className="form-control"
@@ -76,7 +72,7 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Address</label>
-              <input
+              <input required
                 onChange={(e) => setA(e.target.value)}
                 type="text"
                 className="form-control"
@@ -85,7 +81,7 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Nipt</label>
-              <input
+              <input required
                 onChange={(e) => setN(e.target.value)}
                 type="text"
                 className="form-control"
@@ -94,7 +90,7 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Email address</label>
-              <input
+              <input required
                 onChange={(e) => setE(e.target.value)}
                 type="email"
                 className="form-control"
@@ -103,7 +99,7 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Password</label>
-              <input
+              <input required
               onChange={(e)=>setP(e.target.value)}
                 type="password"
                 className="form-control"
@@ -116,7 +112,7 @@ const nav=useNavigate()
               </button>
             </div>
             <p className="forgot-password text-right">
-              Already registered <Link to="/sign-in">sign in?</Link>
+              Already registered <Link to="/sign-in">Log in?</Link>
             </p>
           </form>
         </div>

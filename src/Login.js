@@ -39,8 +39,7 @@ export default function Login() {
 
   return (
     <>
-
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
   <img height={100} src={img}/>
@@ -75,10 +74,11 @@ export default function Login() {
                 Insert the right credentials
               </div>
             )}
-            <h3>Sign In</h3>
+            <h3>Log In</h3>
             <div className="mb-3">
               <label>Email address or phone number if you are an orphan</label>
               <input
+              required
                 onChange={(e) =>
                   setValues({ ...values, email: e.target.value })
                 }
@@ -91,6 +91,7 @@ export default function Login() {
             <div className="mb-3">
               <label>Password</label>
               <input
+              required
                 onChange={(e) =>
                   setValues({ ...values, password: e.target.value })
                 }
@@ -100,18 +101,7 @@ export default function Login() {
                 placeholder="Enter password"
               />
             </div>
-            <div className="mb-3">
-              <div className="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  className="custom-control-input"
-                  id="customCheck1"
-                />
-                <label className="custom-control-label" htmlFor="customCheck1">
-                  Remember me
-                </label>
-              </div>
-            </div>
+         
             <div className="d-grid">
               <button type="submit" className="btn btn-primary">
                 Submit

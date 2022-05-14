@@ -10,6 +10,9 @@ import OrphansHome from './components/orphan/OrphansHome'
 import BusinessHome from "./components/business/BusinessHome";
 import Jobs from "./components/Jobs/Jobs";
 import {AboutUs} from "./components/common/AboutUs";
+import Contact from "./components/common/Contact";
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
 
 
 function App() {
@@ -17,10 +20,11 @@ function App() {
  
       <Router>
         <div className="App">
+
           <div>
             <Routes>
               <Route exact path="/" element={<LandingPage />} />
-        
+              <Route exact path="/contact" element={<Contact />} />
               <Route exact path="/orphan/home" element={<OrphansHome />} />
               <Route exact path="/business/home" element={<BusinessHome />} />
               <Route exact path="/jobs" element={<Jobs />} />
@@ -32,6 +36,7 @@ function App() {
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-up-business" element={<SignUpBusiness />} />
           </Routes>
+          <Footer/>
         </div>
       </Router>
 

@@ -1,10 +1,9 @@
 import React from "react";
-
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const OrphansHome = () => {
   const nav = useNavigate();
-const loc=useLocation()
+  const loc = useLocation();
   return (
     <div style={{ padding: "20px" }}>
       <button
@@ -16,7 +15,7 @@ const loc=useLocation()
         Log out
       </button>
       <header>
-        Welcome {loc?.search?.split('=')[1]}! Glad to have you here!
+        Welcome {loc?.search?.split("=")[1]}! Glad to have you here!
         <br />
         You are not alone!
       </header>
@@ -32,7 +31,11 @@ const loc=useLocation()
                     Click the button below to see the list of jobs
                   </p>
                   <p>
-                    <button onClick={()=>nav('/jobs')} type="button" className="btn btn-success">
+                    <button
+                      onClick={() => nav("/jobs")}
+                      type="button"
+                      className="btn btn-success"
+                    >
                       See jobs
                     </button>
                   </p>
@@ -51,7 +54,7 @@ const loc=useLocation()
                   </p>
                   <p>
                     <a
-                    className="btn  btn-success"
+                      className="btn  btn-success"
                       href={`https://www.gazetacelesi.al/njoftime-rezultate/prona-te-patundshme/garsoniere-1-1?cm=57;58&page=1&action=ME%20QERA&pricef=%5B%200%20TO%2020000%5D&currency=leke`}
                       target="_blank"
                     >
@@ -73,10 +76,9 @@ const loc=useLocation()
                   </p>
                   <p>
                     <a
-             
                       style={{ color: "white" }}
                       className="btn btn-info"
-                      target='_blank'
+                      target="_blank"
                       href="https://web.facebook.com/RITKCharityClub/photos"
                     >
                       Get a gift
@@ -101,7 +103,8 @@ const loc=useLocation()
                       type="button"
                       style={{ color: "white" }}
                       className="btn btn-primary"
-                      href='https://wa.me/+355683377337'
+                      href="https://wa.me/+355683377337"
+                      target="_blank"
                     >
                       Go to chat
                     </a>
