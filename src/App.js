@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./components/orphan/Signup";
 import SignUpBusiness from "./components/business/SignupBusiness";
-import Homie from "./landing";
+import LandingPage from "./landing";
 import OrphansHome from './components/orphan/OrphansHome'
 import BusinessHome from "./components/business/BusinessHome";
 import Jobs from "./components/Jobs/Jobs";
@@ -19,7 +19,7 @@ function App() {
         <div className="App">
           <div>
             <Routes>
-              <Route exact path="/" element={<Homie />} />
+              <Route exact path="/" element={<LandingPage />} />
         
               <Route exact path="/orphan/home" element={<OrphansHome />} />
               <Route exact path="/business/home" element={<BusinessHome />} />

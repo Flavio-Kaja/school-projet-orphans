@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "./images/img.jpeg";
+import Cards from "./components/Cards";
+import img from "./images/img.png";
 import newimg from "./images/newfpg.jpg";
 
 const Homie = () => {
@@ -11,17 +12,23 @@ const Homie = () => {
           <div>
             <img
               style={{
-                width: 100,
-                height: 90,
+                width: 140,
+  
               }}
               src={img}
             />
           </div>
           <div>
-            <li>Home</li>
+            <li>
+              <a href="#">Home</a>
+            </li>
 
-            <Link to="/about-us">About us</Link>
-            <li>Contact</li>
+            <li>
+              <Link to="/about-us">About us</Link>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
             <li>
               <Link to="/sign-in">Login</Link>
             </li>
@@ -32,7 +39,7 @@ const Homie = () => {
       <div>
         <img style={{ width: 1000 }} src={newimg} />
       </div>
-
+<Cards/>
       <div className="container" style={{ paddingTop: 100 }}>
         <div className="row">
           <div

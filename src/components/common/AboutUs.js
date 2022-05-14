@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "../../images/img.jpeg";
+import img from "../../images/img.png";
 import "../../styles/general.css";
-
 import aboutusImg from "../../images/girlWithLights.jpg";
 export const AboutUs = () => {
   return (
@@ -12,19 +11,22 @@ export const AboutUs = () => {
           <div>
             <img
               style={{
-                width: 100,
-                height: 90,
+                width: 140,
               }}
               src={img}
             />
           </div>
           <div>
-            <Link to="/">
-              <li>Home</li>
-            </Link>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
 
-            <Link to="/about-us">About us</Link>
-            <li>Contact</li>
+            <li>
+              <Link to="/about-us">About us</Link>
+            </li>
+            <li>
+              <Link to={"/contact"}>Contact</Link>
+            </li>
             <li>
               <Link to="/sign-in">Login</Link>
             </li>
