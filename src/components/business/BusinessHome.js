@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Container } from "../popup/PopupContainer";
 
 const BusinessHome = () => {
-
-const loc=useLocation()
+  const loc = useLocation();
   const nav = useNavigate();
   const [showCreate, setShowCreate] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -19,7 +19,12 @@ const loc=useLocation()
       }, 2000);
     }
   }, [showAlert]);
-
+  const triggerText = "Open form";
+  const onSubmit = (event) => {
+    event.preventDefault(event);
+    console.log(event.target.name.value);
+    console.log(event.target.email.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const obj = { title, location, desc, salary };
@@ -41,7 +46,6 @@ const loc=useLocation()
 
   const html = (
     <div className="auth-inner" style={{ marginTop: 30 }}>
-      
       <form onSubmit={handleSubmit}>
         <h3>Create a job</h3>
         <div className="mb-3">
@@ -94,7 +98,7 @@ const loc=useLocation()
   );
 
   return (
-    <div className="business" style={{paddingTop:'30px'}}>
+    <div className="business" style={{ paddingTop: "30px" }}>
       <button
         type="button"
         style={{ float: "right" }}
@@ -103,10 +107,11 @@ const loc=useLocation()
       >
         Log out
       </button>
-      <h1 style={{ padding: 20, textAlign: "center" }}>Welcome {loc?.search?.split('=')[1]}!</h1>
+      <h1 style={{ padding: 20, textAlign: "center" }}>
+        Welcome {loc?.search?.split("=")[1]}!
+      </h1>
 
       <section>
-
         <div className="container">
           <div className="row" style={{ marginBottom: 20 }}>
             <div className="col">
@@ -118,15 +123,7 @@ const loc=useLocation()
                     Click the button below to see the create a new job
                   </p>
                   <p>
-                    <button
-                      onClick={() => setShowCreate(true)}
-                      type="button"
-                      className="btn btn-success"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      Create Job
-                    </button>
+                    <Container triggerText={triggerText} onSubmit={onSubmit} />
                   </p>
                 </div>
               </div>
@@ -141,10 +138,10 @@ const loc=useLocation()
                   <p className="card-text">Click the button to donate</p>
                   <p>
                     <a
-                    href="https://www.paypal.com/paypalme/"
+                      href="https://www.paypal.com/paypalme/"
                       onClick={() => {}}
                       type="button"
-                      target='_blank'
+                      target="_blank"
                       className="btn btn-success"
                     >
                       Donate

@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import img from "../../images/img.png"
+import img from "../../images/img.png";
 export default function SignUp() {
   const [fName, setA] = useState("");
   const [lName, setN] = useState("");
@@ -28,10 +28,10 @@ export default function SignUp() {
   };
   return (
     <>
-     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
-  <img height={100} src={img}/>
+            <img height={100} src={img} />
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -54,7 +54,7 @@ export default function SignUp() {
           </div>
         </div>
       </nav>
-      <div className="auth-wrapper">
+      <div className="auth-wrapper" style={{ marginTop: 100 }}>
         <div className="auth-inner">
           <form onSubmit={handleSubmit}>
             <h3>Sign Up</h3>

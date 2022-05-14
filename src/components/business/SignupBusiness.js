@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../images/img.png";
-
 
 export default function SignUpBusiness() {
   const [address, setA] = useState("");
@@ -10,8 +9,7 @@ export default function SignUpBusiness() {
   const [email, setE] = useState();
   const [password, setP] = useState();
 
-
-const nav=useNavigate()
+  const nav = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,21 +17,21 @@ const nav=useNavigate()
     const items = localStorage.getItem("businesses");
     if (items) {
       const parsedItems = JSON.parse(items);
-      localStorage.setItem("businesses", JSON.stringify([...parsedItems,obj]));
-      nav('/sign-in')
+      localStorage.setItem("businesses", JSON.stringify([...parsedItems, obj]));
+      nav("/sign-in");
       return;
     }
 
     localStorage.setItem("businesses", JSON.stringify([obj]));
-    nav('/sign-in')
+    nav("/sign-in");
   };
 
   return (
     <>
-           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
-  <img height={100} src={img}/>
+            <img height={100} src={img} />
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -57,13 +55,14 @@ const nav=useNavigate()
         </div>
       </nav>
 
-      <div className="auth-wrapper">
+      <div className="auth-wrapper" style={{ marginTop: 100 }}>
         <div className="auth-inner">
           <form onSubmit={handleSubmit}>
             <h3>Sign Up as a business</h3>
             <div className="mb-3">
               <label>Name of business</label>
-              <input required
+              <input
+                required
                 onChange={(e) => setNa(e.target.value)}
                 type="text"
                 className="form-control"
@@ -72,7 +71,8 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Address</label>
-              <input required
+              <input
+                required
                 onChange={(e) => setA(e.target.value)}
                 type="text"
                 className="form-control"
@@ -81,7 +81,8 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Nipt</label>
-              <input required
+              <input
+                required
                 onChange={(e) => setN(e.target.value)}
                 type="text"
                 className="form-control"
@@ -90,7 +91,8 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Email address</label>
-              <input required
+              <input
+                required
                 onChange={(e) => setE(e.target.value)}
                 type="email"
                 className="form-control"
@@ -99,8 +101,9 @@ const nav=useNavigate()
             </div>
             <div className="mb-3">
               <label>Password</label>
-              <input required
-              onChange={(e)=>setP(e.target.value)}
+              <input
+                required
+                onChange={(e) => setP(e.target.value)}
                 type="password"
                 className="form-control"
                 placeholder="Enter password"

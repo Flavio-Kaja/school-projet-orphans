@@ -28,21 +28,20 @@ export default function Login() {
     );
 
     if (isOrphan) nav(`/orphan/home?oprhan=${isOrphan?.fName}`);
-    if (currentBusiness) nav(`/business/home?business=${currentBusiness?.name}`);
+    if (currentBusiness)
+      nav(`/business/home?business=${currentBusiness?.name}`);
 
-
-  if(!isOrphan || !currentBusiness) {
-    setShowAlert(true)
-  }
-
+    if (!isOrphan || !currentBusiness) {
+      setShowAlert(true);
+    }
   };
 
   return (
     <>
-     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
-  <img height={100} src={img}/>
+            <img height={100} src={img} />
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -78,7 +77,7 @@ export default function Login() {
             <div className="mb-3">
               <label>Email address or phone number if you are an orphan</label>
               <input
-              required
+                required
                 onChange={(e) =>
                   setValues({ ...values, email: e.target.value })
                 }
@@ -91,7 +90,7 @@ export default function Login() {
             <div className="mb-3">
               <label>Password</label>
               <input
-              required
+                required
                 onChange={(e) =>
                   setValues({ ...values, password: e.target.value })
                 }
@@ -101,7 +100,7 @@ export default function Login() {
                 placeholder="Enter password"
               />
             </div>
-         
+
             <div className="d-grid">
               <button type="submit" className="btn btn-primary">
                 Submit
